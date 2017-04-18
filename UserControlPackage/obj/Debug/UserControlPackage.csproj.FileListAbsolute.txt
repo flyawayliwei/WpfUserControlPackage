@@ -1,0 +1,21 @@
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\bin\Debug\UserControlPackage.exe.config
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\MainWindow.baml
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\MainWindow.g.cs
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\App.g.cs
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\UserControlPackage_MarkupCompile.cache
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\CustomControls\SignalBar\SignalBarView.g.cs
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\UserControlPackage_MarkupCompile.lref
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\bin\Debug\UserControlPackage.exe
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\bin\Debug\UserControlPackage.pdb
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\CustomControls\SignalBar\SignalBarView.baml
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\UserControlPackage.g.resources
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\UserControlPackage.Properties.Resources.resources
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\UserControlPackage.csproj.GenerateResource.Cache
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\UserControlPackage.exe
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\UserControlPackage.pdb
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\CustomControls\ImageToggleButton\AppToolBar.g.cs
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\CustomControls\ImageToggleButton\AppToolBar.baml
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage - 20170418\UserControlPackage\bin\Debug\UserControlPackage.exe.config
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage - 20170418\UserControlPackage\obj\Debug\UserControlPackage.exe
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage - 20170418\UserControlPackage\obj\Debug\UserControlPackage.pdb

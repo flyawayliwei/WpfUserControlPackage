@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="UserControlPackage.CustomControls.ImageToggleButton.AppToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:custom="clr-namespace:UserControlPackage.CustomControls.ImageToggleButton"
+
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Background="AliceBlue"
+            d:DesignHeight="300" d:DesignWidth="70">
+    <UserControl.Resources>
+        <!--<BitmapImage x:Key="DefaultImage_Globe" UriSource="pack://application:,,,/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/Globe.png"/>
+        <BitmapImage x:Key="HighLightImage_Globe" UriSource="pack://application:,,,/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/GlobeHighLight.png"/>-->
+
+        <BitmapImage x:Key="DefaultImage_Globe" UriSource="/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/Globe.png"/>
+        <BitmapImage x:Key="HighLightImage_Globe" UriSource="/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/GlobeHighLight.png"/>
+
+        <BitmapImage x:Key="DefaultImage_Measure" UriSource="/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/Measure.png"/>
+        <BitmapImage x:Key="HighLightImage_Measure" UriSource="/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/MeasureHighLight.png"/>
+
+        <BitmapImage x:Key="DefaultImage_Refresh" UriSource="/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/Refresh.png"/>
+        <BitmapImage x:Key="HighLightImage_Refresh" UriSource="/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/RefreshHighLight.png"/>
+        <Style TargetType="custom:ImageToggleButton">
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="HighlightBackground" Value="#33FFFFFF"/>
+            <!--<Setter Property="HighlightBackground" Value="Yellow"/>-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="custom:ImageToggleButton">
+                        <!--控件模板中TemplateBinding的作用：根据界面真实控件的参数来显示 -->
+                        <Grid Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <Rectangle Name="Background" Fill="{TemplateBinding Background}"/>
+                            <Rectangle Name="HighlightBackground"  Opacity="0" Fill="{TemplateBinding HighlightBackground}"/>
+                            <Image Name="DefaultImage" Margin="5" Stretch="Uniform" Source="{TemplateBinding DefaultImage}"/>
+                            <Image Name="HighLightImage" Margin="5" Opacity="0" Stretch="Uniform" Source="{TemplateBinding HighLightImage}"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Opacity" TargetName="HighlightBackground" Value="1"/>
+                                <Setter Property="Opacity" TargetName="DefaultImage" Value="0"/>
+                                <Setter Property="Opacity" TargetName="HighLightImage" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Opacity" TargetName="DefaultImage" Value="0"/>
+                                <Setter Property="Opacity" TargetName="HighLightImage" Value="1"/>
+                                <Setter Property="ToolTip" Value="{Binding CheckedToolTip}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
+        <Grid HorizontalAlignment="Right">
+            <Border x:Name="CommonPublicToolBarBorder"    VerticalAlignment="Center" Margin="10 0">
+                <UniformGrid Columns="1" Width="38" x:Name="toolgrid">
+
+                    <custom:ImageToggleButton x:Name="ThemeChang" CheckedToolTip="切换白色调" ToolTip="切换蓝色调"
+                                              Checked="ToolButton_Checked" Unchecked="ToolButton_Unchecked"  
+                                       
+                                              DefaultImage="{StaticResource DefaultImage_Globe}" 
+                                              HighLightImage="{StaticResource HighLightImage_Globe}"/>
+
+                    <custom:ImageToggleButton Loaded="ToolBarLoaded" x:Name="MeasureButton" Tag="PopupMeasureButton" ToolTip="空间量测" Checked="ToolButton_Checked" 
+                                              Unchecked="ToolButton_Unchecked"  DefaultImage="{StaticResource DefaultImage_Measure}" 
+                                              HighLightImage="{StaticResource HighLightImage_Measure}"/>
+
+                    <custom:ImageToggleButton Loaded="ToolBarLoaded" x:Name="Plot3D" Tag="PopupPlot3D" ToolTip="三维标绘" Checked="ToolButton_Checked"
+                                              Unchecked="ToolButton_Unchecked"  DefaultImage="{StaticResource DefaultImage_Refresh}" 
+                                              HighLightImage="{StaticResource HighLightImage_Refresh}"/>
+
+
+                </UniformGrid>
+            </Border>
+        </Grid>
+    </Grid>
+    
+</UserControl>

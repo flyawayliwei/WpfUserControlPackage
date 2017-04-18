@@ -1,0 +1,20 @@
+﻿<Window x:Class="UserControlPackage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowState="Maximized"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="SignalBar" Click="Button_Click" HorizontalAlignment="Left"></Button>
+            <Button Content="AppToolBar" Click="Button_Click_AppToolBar" HorizontalAlignment="Left"></Button>
+        </StackPanel>
+        
+        
+        <ContentControl Grid.Row="1" Name="contentControlView"></ContentControl>
+        
+    </Grid>
+</Window>

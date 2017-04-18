@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="UserControlPackage.CustomControls.SignalBar.SignalBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:control="clr-namespace:UserControlPackage.CustomControls.SignalBar"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Background="AliceBlue"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type control:SingnalLight}">
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TranslateTransform X="{Binding Path=X,RelativeSource={RelativeSource AncestorType={x:Type control:SingnalLight}}}"
+                                    Y="{Binding Path=Y,RelativeSource={RelativeSource AncestorType={x:Type control:SingnalLight}}}"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <ControlTemplate.Resources>
+                            <control:SingnalLightStatusConverter x:Key="colorconverter"></control:SingnalLightStatusConverter>
+                            <control:SingnalLightValueConverter x:Key="valueconverter"></control:SingnalLightValueConverter>
+                        </ControlTemplate.Resources>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=ValueA,RelativeSource={RelativeSource AncestorType={x:Type control:SingnalLight}}}"></TextBlock>
+                            <TextBlock Text="100"></TextBlock>
+                            <Border   
+                            x:Name="bd1"
+                            Height="{Binding Path=LightHeight,RelativeSource={RelativeSource AncestorType={x:Type control:SingnalLight}}}"
+                            SnapsToDevicePixels="True"
+                            BorderBrush="Black" BorderThickness="1" Background="Transparent">
+                                <Rectangle Fill="{Binding Path=ValueA,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type control:SingnalLight}},
+                                                      Converter={StaticResource ResourceKey=colorconverter}}" 
+                                       VerticalAlignment="Bottom">
+                                    <Rectangle.Height>
+                                        <MultiBinding Converter="{StaticResource ResourceKey=valueconverter}">
+                                            <Binding Path="ValueA" RelativeSource="{RelativeSource AncestorType={x:Type control:SingnalLight}}"></Binding>
+                                            <Binding Path="Height" ElementName="bd1"></Binding>
+                                        </MultiBinding>
+                                    </Rectangle.Height>
+                                </Rectangle>
+                            </Border>
+                            <TextBlock Text="0"></TextBlock>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+        <Grid>
+            <control:SingnalLight Width="50" Height="300"
+                             ValueA="{Binding Source={x:Static control:SignalManager.Instance},Path=RandomA}"></control:SingnalLight>
+           
+
+            <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
+                <Button Content="start" Click="Button_start_click"></Button>
+            <Button Content="end" Click="Button_end_click"></Button>
+            </StackPanel>
+
+        </Grid>
+</UserControl>
