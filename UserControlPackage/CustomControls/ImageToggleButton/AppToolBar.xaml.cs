@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserControlPackage.Theme;
 
 namespace UserControlPackage.CustomControls.ImageToggleButton
 {
@@ -32,7 +33,7 @@ namespace UserControlPackage.CustomControls.ImageToggleButton
         /// <param name="e"></param>
         private void ToolButton_Checked(object sender, RoutedEventArgs e)
         {
-            return;
+            //return;
             Control control = sender as Control;
             string tag = control.Tag.ToString();
             switch (control.Tag.ToString())
@@ -47,7 +48,7 @@ namespace UserControlPackage.CustomControls.ImageToggleButton
         /// <param name="e"></param>
         private void ToolButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            return;
+            //return;
             Control control = sender as Control;
             string tag = control.Tag.ToString();
             switch (control.Tag.ToString())
@@ -74,5 +75,21 @@ namespace UserControlPackage.CustomControls.ImageToggleButton
                 ToolBarToggleButtonDic.Add(toggleBt.Tag.ToString(), toggleBt);
             }
         }
+        #region 事件注册
+        public delegate void ControlsLoadedEventHandler(object sender, RoutedEventArgs e);
+        protected ControlsLoadedEventHandler CommonLoadedControls = ThemeSetter.getInstance().CommonLoadedControlsMethod;
+        #endregion
+
+        #region 主题色切换
+
+        private void ThemeButton_Checked(object sender, RoutedEventArgs e)
+        {
+            ThemeSetter.getInstance().RestAllBackaground(false);
+        }
+        private void ThemeButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ThemeSetter.getInstance().RestAllBackaground(true);
+        }
+        #endregion
     }
 }

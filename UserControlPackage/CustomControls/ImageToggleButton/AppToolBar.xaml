@@ -6,7 +6,7 @@
 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             Background="AliceBlue"
+             Background="Gray"
             d:DesignHeight="300" d:DesignWidth="70">
     <UserControl.Resources>
         <!--<BitmapImage x:Key="DefaultImage_Globe" UriSource="pack://application:,,,/UserControlPackage;component/CustomControls/ImageToggleButton/Resource/Globe.png"/>
@@ -53,29 +53,61 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
+    <Grid>
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Center">
         <Grid HorizontalAlignment="Right">
-            <Border x:Name="CommonPublicToolBarBorder"    VerticalAlignment="Center" Margin="10 0">
+            <Border x:Name="CommonPublicToolBarBorder" Loaded="CommonLoadedControls"   VerticalAlignment="Center" Margin="10 0">
                 <UniformGrid Columns="1" Width="38" x:Name="toolgrid">
 
                     <custom:ImageToggleButton x:Name="ThemeChang" CheckedToolTip="切换白色调" ToolTip="切换蓝色调"
-                                              Checked="ToolButton_Checked" Unchecked="ToolButton_Unchecked"  
-                                       
+                                              Checked="ThemeButton_Checked" 
+                                              Unchecked="ThemeButton_Unchecked"  
+                                              DefaultImage="{StaticResource DefaultImage_Refresh}" 
+                                              HighLightImage="{StaticResource HighLightImage_Refresh}"/>
+
+                    <custom:ImageToggleButton x:Name="Globe" CheckedToolTip="GlobeChecked" ToolTip="GlobeUnChecked"
+                                              Checked="ToolButton_Checked" Unchecked="ToolButton_Unchecked"  Tag ="ThemeChang"
                                               DefaultImage="{StaticResource DefaultImage_Globe}" 
                                               HighLightImage="{StaticResource HighLightImage_Globe}"/>
 
-                    <custom:ImageToggleButton Loaded="ToolBarLoaded" x:Name="MeasureButton" Tag="PopupMeasureButton" ToolTip="空间量测" Checked="ToolButton_Checked" 
+                    <custom:ImageToggleButton Loaded="ToolBarLoaded" x:Name="MeasureButton" Tag="PopupMeasureButton" ToolTip="MeasureChecked" 
+                                              CheckedToolTip="MeasureUnChecked"
+                                              Checked="ToolButton_Checked" 
                                               Unchecked="ToolButton_Unchecked"  DefaultImage="{StaticResource DefaultImage_Measure}" 
                                               HighLightImage="{StaticResource HighLightImage_Measure}"/>
 
-                    <custom:ImageToggleButton Loaded="ToolBarLoaded" x:Name="Plot3D" Tag="PopupPlot3D" ToolTip="三维标绘" Checked="ToolButton_Checked"
-                                              Unchecked="ToolButton_Unchecked"  DefaultImage="{StaticResource DefaultImage_Refresh}" 
-                                              HighLightImage="{StaticResource HighLightImage_Refresh}"/>
+
 
 
                 </UniformGrid>
             </Border>
         </Grid>
     </Grid>
-    
+
+    <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
+        <Grid HorizontalAlignment="Right">
+            <Border x:Name="CommonPublicToolBarBorderRight" Loaded="CommonLoadedControls"   VerticalAlignment="Center" Margin="10 0">
+                <UniformGrid Columns="1" Width="38" x:Name="toolgridRight">
+
+
+                    <custom:ImageToggleButton x:Name="GlobeRight" CheckedToolTip="GlobeChecked" ToolTip="GlobeUnChecked"
+                                              Checked="ToolButton_Checked" Unchecked="ToolButton_Unchecked"  Tag ="ThemeChang"
+                                              DefaultImage="{StaticResource DefaultImage_Globe}" 
+                                              HighLightImage="{StaticResource HighLightImage_Globe}"/>
+
+                    <custom:ImageToggleButton Loaded="ToolBarLoaded" x:Name="MeasureButtonRight" Tag="PopupMeasureButton" ToolTip="MeasureChecked" 
+                                              CheckedToolTip="MeasureUnChecked"
+                                              Checked="ToolButton_Checked" 
+                                              Unchecked="ToolButton_Unchecked"  DefaultImage="{StaticResource DefaultImage_Measure}" 
+                                              HighLightImage="{StaticResource HighLightImage_Measure}"/>
+
+
+
+
+                </UniformGrid>
+            </Border>
+        </Grid>
+    </Grid>
+    </Grid>
+
 </UserControl>
