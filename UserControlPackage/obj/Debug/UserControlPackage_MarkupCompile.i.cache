@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\liwei\fpan\06 C#学习\WPF\UserControlPackage - 20170418\UserControlPackage\obj\Debug\
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\obj\Debug\
 UserControlPackage
 none
 false
 DEBUG;TRACE
-E:\liwei\fpan\06 C#学习\WPF\UserControlPackage - 20170418\UserControlPackage\App.xaml
+E:\liwei\fpan\06 C#学习\WPF\UserControlPackage\UserControlPackage\App.xaml
 3-608948962
 
-141998044334
+15-1696534416
 12-1401562060
 CustomControls\ImageToggleButton\AppToolBar.xaml;CustomControls\SignalBar\SignalBarView.xaml;MainWindow.xaml;
 
-False
+True
 
